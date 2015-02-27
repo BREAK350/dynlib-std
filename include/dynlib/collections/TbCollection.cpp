@@ -14,7 +14,18 @@ namespace dynlib {
 // ---------------------------------------------------------------------------
 namespace dynlib {
 	namespace collections {
+		TbCollection::TbRefData::~TbRefData() {
+			data = 0;
+		}
 
+		TbCollectionItem* TbCollection::TbRefData::getData()const {
+			return data;
+		}
+
+		void TbCollection::TbRefData::setData(TbCollectionItem *data) {
+			this->data = data;
+		}
 	}
 }
+
 // ---------------------------------------------------------------------------
