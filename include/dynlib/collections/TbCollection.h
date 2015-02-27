@@ -18,7 +18,7 @@ namespace dynlib {
 namespace dynlib {
 	namespace collections {
 		class TbCollection {
-		private:
+		protected:
 			// classes
 			class TbData {
 			public:
