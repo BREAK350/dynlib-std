@@ -23,9 +23,9 @@ namespace dynlib {
 
 			virtual void addItem(TbCollectionItem *item);
 			virtual void addItem_(TbCollectionItem *item_);
-			virtual void removeItem(TbCollectionItem *item);
-			virtual void removeAllItems();
-			virtual bool contains(TbCollectionItem *item)const;
+			virtual void removeItem(TbCollectionItem *item) = 0;
+			virtual void removeAllItems() = 0;
+			virtual bool contains(TbCollectionItem *item)const = 0;
 			virtual void forEach(TbCollectionItemAction *action) = 0;
 		};
 	}
