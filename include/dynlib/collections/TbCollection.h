@@ -7,6 +7,7 @@
 namespace dynlib {
 	namespace collections {
 		class TbCollection;
+		class TbCollectionItem;
 	}
 }
 
@@ -16,10 +17,20 @@ namespace dynlib {
 namespace dynlib {
 	namespace collections {
 		class TbCollection {
+		public:
 
 		};
 	}
 }
+
 // ---------------------------------------------------------------------------
+namespace dynlib {
+	namespace collections {
+		class TbCollectionItem {
+		public:
+
+		};
+	}
+}
 // ---------------------------------------------------------------------------
 #endif
