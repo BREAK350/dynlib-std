@@ -8,6 +8,7 @@ namespace dynlib {
 	namespace collections {
 		class TbCollection;
 		class TbCollectionItem;
+		class TbCollectionItemAction;
 	}
 }
 
@@ -18,7 +19,14 @@ namespace dynlib {
 	namespace collections {
 		class TbCollection {
 		public:
+			virtual ~TbCollection();
 
+			virtual void addItem(TbCollectionItem *item);
+			virtual void addItem_(TbCollectionItem *item_);
+			virtual void removeItem(TbCollectionItem *item);
+			virtual void removeAllItems();
+			virtual bool contains(TbCollectionItem *item)const;
+			virtual void forEach(TbCollectionItemAction *action) = 0;
 		};
 	}
 }
