@@ -20,7 +20,20 @@ namespace dynlib
 	{
 		class TbHashMap
 		{
-			
+			private:
+				// classes
+				class TbHashMapItem
+				{
+					private:
+						TbHashMapItem *next_;
+					public:
+                        TbHashMapItem();
+						virtual ~TbHashMapItem();
+						virtual TbHashable* getData()const = 0;
+						virtual int getHash()const;
+
+						virtual void setNext_(TbHashMapItem *next_);
+                };
         };
 	}
 }
@@ -33,7 +46,7 @@ namespace dynlib
 		{
 			public:
 				virtual ~TbHashable() {};
-                virtual int getHash()const = 0;
+				virtual int getHash()const = 0;
 		};
 	}
 }
