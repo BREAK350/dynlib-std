@@ -8,6 +8,7 @@ namespace dynlib
 	namespace collections
 	{
 		class TbHashMap;
+		class TbHashable;
 	}
 }
 //---------------------------------------------------------------------------
@@ -19,10 +20,22 @@ namespace dynlib
 	{
 		class TbHashMap
 		{
-
+			
         };
 	}
 }
 //---------------------------------------------------------------------------
+namespace dynlib
+{
+	namespace collections
+	{
+		class TbHashable
+		{
+			public:
+				virtual ~TbHashable() {};
+                virtual int getHash()const = 0;
+		};
+	}
+}
 //---------------------------------------------------------------------------
 #endif
