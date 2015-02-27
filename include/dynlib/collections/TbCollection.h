@@ -68,6 +68,8 @@ namespace dynlib {
 namespace dynlib {
 	namespace collections {
 		class TbCollectionItem {
+		public:
+			virtual ~TbCollectionItem();
 		};
 	}
 }

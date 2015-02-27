@@ -65,6 +65,17 @@ namespace dynlib {
 			data_->setData_(item_);
 			addData_(data_);
 		}
+
+		TbCollection::~TbCollection() {
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
+namespace dynlib {
+	namespace collections {
+		TbCollectionItem::~TbCollectionItem() {
+		}
 	}
 }
 
