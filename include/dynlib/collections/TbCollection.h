@@ -25,6 +25,9 @@ namespace dynlib {
 				virtual TbCollectionItem* getData()const = 0;
 			};
 
+		protected:
+			virtual void addData_(TbData *data_) = 0;
+
 		public:
 			virtual ~TbCollection();
 
