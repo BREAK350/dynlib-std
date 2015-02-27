@@ -59,6 +59,7 @@ namespace dynlib {
 			virtual void removeAllItems() = 0;
 			virtual bool contains(TbCollectionItem *item)const = 0;
 			virtual void forEach(TbCollectionItemAction *action) = 0;
+			virtual int getSize()const = 0;
 		};
 	}
 }
