@@ -67,4 +67,12 @@ namespace dynlib {
 		}
 	}
 }
+
+// ---------------------------------------------------------------------------
+namespace dynlib {
+	namespace collections {
+		TbCollectionItemAction::~TbCollectionItemAction() {
+		}
+	}
+}
 // ---------------------------------------------------------------------------

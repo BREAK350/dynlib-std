@@ -68,8 +68,17 @@ namespace dynlib {
 namespace dynlib {
 	namespace collections {
 		class TbCollectionItem {
-		public:
+		};
+	}
+}
 
+// ---------------------------------------------------------------------------
+namespace dynlib {
+	namespace collections {
+		class TbCollectionItemAction {
+		public:
+			virtual ~TbCollectionItemAction();
+			virtual void perform(TbCollectionItem *item) = 0;
 		};
 	}
 }
