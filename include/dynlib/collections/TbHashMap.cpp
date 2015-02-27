@@ -42,6 +42,11 @@ namespace dynlib
 				delete next_;
 			}
 			this->next_ = next_;
+		}
+
+		TbHashMap::TbHashMapItem* TbHashMap::TbHashMapItem::getNext()const
+		{
+        	return next_;
         }
 	}
 }
@@ -66,17 +71,24 @@ namespace dynlib
             }
         }
 
-		void TbHashMap::TbHashMapRoot::add(TbHashable *data_)
+		void TbHashMap::TbHashMapRoot::add_(TbHashMapItem *item_)
 		{
-			if(data_)
+			if(item_)
 			{
-				TbHashMapItem *newRoot_ = new TbHashMapItem();
+				item_->setNext_(root_);
+				root_ = item_;
+				++count;
             }
         }
 
 		TbHashable* TbHashMap::TbHashMapRoot::get(const int &hash)const
 		{
-
+			TbHashMapItem *item = root_;
+			while(item && item->getHash() != hash)
+			{
+                item = item->getNext();
+			}
+			return item ? item->getData() : 0;
         }
 	}
 }
