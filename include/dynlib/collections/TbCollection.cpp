@@ -52,3 +52,19 @@ namespace dynlib {
 }
 
 // ---------------------------------------------------------------------------
+namespace dynlib {
+	namespace collections {
+		void TbCollection::addItem(TbCollectionItem * item) {
+			TbRefData *data_ = new TbRefData();
+			data_->setData(item);
+			addData_(data_);
+		}
+
+		void TbCollection::addItem_(TbCollectionItem * item_) {
+			TbObjData *data_ = new TbObjData();
+			data_->setData_(item_);
+			addData_(data_);
+		}
+	}
+}
+// ---------------------------------------------------------------------------
