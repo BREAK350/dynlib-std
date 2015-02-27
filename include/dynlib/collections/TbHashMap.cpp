@@ -46,4 +46,39 @@ namespace dynlib
 	}
 }
 //---------------------------------------------------------------------------
+namespace dynlib
+{
+	namespace collections
+	{
+		TbHashMap::TbHashMapRoot::TbHashMapRoot()
+		{
+			count = 0;
+			root_ = 0;
+        }
+
+		TbHashMap::TbHashMapRoot::~TbHashMapRoot()
+		{
+			if(root_)
+			{
+				delete root_;
+				root_ = 0;
+				count = 0;
+            }
+        }
+
+		void TbHashMap::TbHashMapRoot::add(TbHashable *data_)
+		{
+			if(data_)
+			{
+				TbHashMapItem *newRoot_ = new TbHashMapItem();
+            }
+        }
+
+		TbHashable* TbHashMap::TbHashMapRoot::get(const int &hash)const
+		{
+
+        }
+	}
+}
+//---------------------------------------------------------------------------
 

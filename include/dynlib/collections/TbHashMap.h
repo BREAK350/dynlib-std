@@ -33,6 +33,19 @@ namespace dynlib
 						virtual int getHash()const;
 
 						virtual void setNext_(TbHashMapItem *next_);
+				};
+
+				class TbHashMapRoot
+				{
+					private:
+						int count;
+						TbHashMapItem *root_;
+					public:
+						TbHashMapRoot();
+						virtual ~TbHashMapRoot();
+
+						virtual void add(TbHashable *data_);
+						virtual TbHashable* get(const int &hash)const;
                 };
         };
 	}
