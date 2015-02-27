@@ -7,7 +7,42 @@ namespace dynlib
 {
 	namespace collections
 	{
+		TbHashMap::TbHashMap()
+		{
+			count = 0;
+			roots_ = 0;
+			maxElements = 16;
+		}
 
+		TbHashMap::~TbHashMap()
+		{
+
+		}
+
+		int TbHashMap::add_(TbHashMapItem *item_)
+		{
+			int i = getIndexFromHash(item_->getHash());
+			if(i == -1)
+			{
+
+			}
+			else
+			{
+				int res = roots_[i]->add_(item_, maxElements);
+				if(!res)
+				{
+					/*
+						resize
+                        count = 2 * count;
+					*/
+                }
+            }
+		}
+
+		int TbHashMap::getIndexFromHash(const int &hash)const
+		{
+         	return count > 0 ? hash % count : -1;
+        }
 	}
 }
 //---------------------------------------------------------------------------

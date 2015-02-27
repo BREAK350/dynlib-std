@@ -47,7 +47,22 @@ namespace dynlib
 
 						virtual int add_(TbHashMapItem *item_, const int &maxElements);
 						virtual TbHashable* get(const int &hash)const;
-                };
+				};
+
+			private:
+				int count;
+				TbHashMapRoot **roots_;
+
+				int maxElements;
+			private:
+				virtual int add_(TbHashMapItem *item_);
+				virtual int getIndexFromHash(const int &hash)const;
+			public:
+				TbHashMap();
+				virtual ~TbHashMap();
+
+				virtual int add(TbHashable *data);
+				virtual int add_(TbHashable *data_);
         };
 	}
 }
