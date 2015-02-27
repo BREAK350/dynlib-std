@@ -32,17 +32,24 @@ namespace dynlib {
 				virtual ~TbItem();
 				virtual TbItem* getNext()const;
 				virtual void setData_(TbData *data_);
-				virtual void setNext_(TbData *data_);
+				virtual void addNext_(TbData *data_);
 			};
+
+		private:
+			TbItem *first_;
+			TbItem *last;
 
 		protected:
 			virtual void addData_(TbData *data_);
 
 		public:
+			TbListCollection();
+			virtual ~TbListCollection();
 			virtual void removeItem(TbCollectionItem *item);
 			virtual void removeAllItems();
 			virtual bool contains(TbCollectionItem *item)const;
 			virtual void forEach(TbCollectionItemAction *action);
+			virtual int getSize()const;
 		};
 	}
 }

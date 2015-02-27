@@ -6,7 +6,29 @@
 // ---------------------------------------------------------------------------
 namespace dynlib {
 	namespace collections {
+		TbListCollection::TbListCollection() {
+			first_ = 0;
+			last = 0;
+		}
+
+		TbListCollection::~TbListCollection() {
+			if (first_) {
+				delete first_;
+				first_ = 0;
+			}
+			last = 0;
+		}
+
 		void TbListCollection::addData_(TbData *data_) {
+			if (first_) {
+				last->addNext_(data_);
+				last = last->getNext();
+			}
+			else {
+				first_ = new TbItem();
+				first_->setData_(data_);
+				last = first_;
+			}
 		}
 
 		void TbListCollection::removeItem(TbCollectionItem *item) {
@@ -19,6 +41,17 @@ namespace dynlib {
 		}
 
 		void TbListCollection::forEach(TbCollectionItemAction *action) {
+			if (action) {
+				TbItem *item = first_;
+				while (item) {
+					action->perform(item);
+					item = item->getNext();
+				}
+			}
+		}
+
+		int TbListCollection::getSize()const {
+
 		}
 	}
 }
@@ -64,11 +97,12 @@ namespace dynlib {
 			next_ = item_;
 		}
 
-		void TbListCollection::TbItem::setNext_(TbData *data_) {
+		void TbListCollection::TbItem::addNext_(TbData *data_) {
 			TbItem *item_ = new TbItem();
 			item_->setData_(data_);
 			setNext_(item_);
 		}
+
 	}
 }
 // ---------------------------------------------------------------------------
