@@ -31,6 +31,7 @@ namespace dynlib {
 				TbItem();
 				virtual ~TbItem();
 				virtual TbItem* getNext()const;
+				virtual TbCollectionItem* getData()const;
 				virtual void setData_(TbData *data_);
 				virtual void addNext_(TbData *data_);
 			};

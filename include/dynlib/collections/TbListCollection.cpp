@@ -44,7 +44,7 @@ namespace dynlib {
 			if (action) {
 				TbItem *item = first_;
 				while (item) {
-					action->perform(item);
+					action->perform(item->getData());
 					item = item->getNext();
 				}
 			}
@@ -101,6 +101,10 @@ namespace dynlib {
 			TbItem *item_ = new TbItem();
 			item_->setData_(data_);
 			setNext_(item_);
+		}
+
+		TbCollectionItem* TbListCollection::TbItem::getData()const {
+			return data_->getData();
 		}
 
 	}
