@@ -6,7 +6,8 @@
 // ---------------------------------------------------------------------------
 namespace dynlib {
 	namespace collections {
-
+		TbCollection::TbData::~TbData() {
+		}
 	}
 }
 

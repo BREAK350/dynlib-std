@@ -22,6 +22,7 @@ namespace dynlib {
 			// classes
 			class TbData {
 			public:
+				virtual ~TbData();
 				virtual TbCollectionItem* getData()const = 0;
 			};
 
