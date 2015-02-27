@@ -18,6 +18,13 @@ namespace dynlib {
 namespace dynlib {
 	namespace collections {
 		class TbCollection {
+		private:
+			// classes
+			class TbData {
+			public:
+				virtual TbCollectionItem* getData()const = 0;
+			};
+
 		public:
 			virtual ~TbCollection();
 
