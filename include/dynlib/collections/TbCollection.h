@@ -37,6 +37,16 @@ namespace dynlib {
 				virtual void setData(TbCollectionItem *data);
 			};
 
+			class TbObjData : public TbData {
+			private:
+				TbCollectionItem *data_;
+
+			public:
+				virtual ~TbObjData();
+				virtual TbCollectionItem* getData()const;
+				virtual void setData_(TbCollectionItem *data_);
+			};
+
 		protected:
 			virtual void addData_(TbData *data_) = 0;
 

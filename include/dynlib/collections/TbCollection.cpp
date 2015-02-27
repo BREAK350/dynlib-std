@@ -29,3 +29,26 @@ namespace dynlib {
 }
 
 // ---------------------------------------------------------------------------
+namespace dynlib {
+	namespace collections {
+		TbCollection::TbObjData::~TbObjData() {
+			if (data_) {
+				delete data_;
+				data_ = 0;
+			}
+		}
+
+		TbCollectionItem* TbCollection::TbObjData::getData()const {
+			return data_;
+		}
+
+		void TbCollection::TbObjData::setData_(TbCollectionItem *data_) {
+			if (this->data_) {
+				delete this->data_;
+			}
+			this->data_ = data_;
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
