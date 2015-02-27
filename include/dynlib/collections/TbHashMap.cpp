@@ -71,14 +71,15 @@ namespace dynlib
             }
         }
 
-		void TbHashMap::TbHashMapRoot::add_(TbHashMapItem *item_)
+		int TbHashMap::TbHashMapRoot::add_(TbHashMapItem *item_, const int &maxElements)
 		{
 			if(item_)
 			{
 				item_->setNext_(root_);
 				root_ = item_;
 				++count;
-            }
+			}
+			return count < maxElements;
         }
 
 		TbHashable* TbHashMap::TbHashMapRoot::get(const int &hash)const

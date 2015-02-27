@@ -45,7 +45,7 @@ namespace dynlib
 						TbHashMapRoot();
 						virtual ~TbHashMapRoot();
 
-						virtual void add_(TbHashMapItem *item_);
+						virtual int add_(TbHashMapItem *item_, const int &maxElements);
 						virtual TbHashable* get(const int &hash)const;
                 };
         };
